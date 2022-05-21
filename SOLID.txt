@@ -1,0 +1,27 @@
+S.O.L.I.D. Principles of OOPS
+
+1. S -> Single Responsibility Principle
+ * Every class should have a single responsibility.
+ * There should never be more tha one reason for a class to change.
+
+2. O -> Open/Closed Principle
+ * Your classes should be open for extension and closed for modification
+ * Use abstract base class
+
+3. L -> Liskov Substitution Principle
+ * Object in a program would be replaceable with instances of their subtypes
+  without altering the correctness of the program
+ * "Is a Test" A rectangle is a square but square is not a rectangle
+
+4. I -> Interface Segregation Principle
+ * Make fine grained interfaces that are client specific.
+ * Many client specific interface is better than a single interface.
+
+5. D -> Dependency Inversion Principle
+ * Abstraction should not depend upon details
+ * Details should depend upon the abstractions
+
+Summary
+
+ * will lead you to better code quality.
+ * more testable and readable
