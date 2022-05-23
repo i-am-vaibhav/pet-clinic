@@ -2,16 +2,16 @@ package com.pet.clinic.services;
 
 import java.util.Set;
 
-public interface BaseService<T,ID> {
+public interface BaseService<T,Id> {
 
     Set<T> findAll();
 
-    T findById(ID id);
+    T findById(Id id);
 
     T save(T object);
 
     void delete(T object);
 
-    void deleteById(ID id);
+    void deleteById(Id id);
 
 }
