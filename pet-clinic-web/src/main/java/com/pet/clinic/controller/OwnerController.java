@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/owners")
 public class OwnerController {
 
-    @GetMapping({"","/","/index","/index.html"})
-    public String listOwners(Model model){
-       return "owners/index";
+    @GetMapping({"", "/", "/index", "/index.html"})
+    public String listOwners(Model model) {
+        return "owners/index";
     }
 
 }

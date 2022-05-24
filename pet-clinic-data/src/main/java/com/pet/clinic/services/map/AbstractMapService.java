@@ -5,9 +5,9 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-public abstract class AbstractMapService<T,Id> {
+public abstract class AbstractMapService<T, Id> {
 
-    protected Map<Id,T> map = new HashMap<>();
+    protected Map<Id, T> map = new HashMap<>();
 
     public Set<T> findAll() {
         return new HashSet<>(map.values());
@@ -17,8 +17,8 @@ public abstract class AbstractMapService<T,Id> {
         return map.get(id);
     }
 
-    public T save(Id id,T t) {
-        return map.put(id,t);
+    public T save(Id id, T t) {
+        return map.put(id, t);
     }
 
     public void deleteById(Id id) {
