@@ -1,6 +1,9 @@
 package com.pet.clinic.model;
 
-public class Speciality extends BaseEntity{
+import javax.persistence.Entity;
+
+@Entity
+public class Speciality extends BaseEntity {
 
     private String description;
 

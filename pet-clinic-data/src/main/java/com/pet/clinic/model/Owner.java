@@ -1,8 +1,14 @@
 package com.pet.clinic.model;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import java.util.HashSet;
 import java.util.Set;
 
+@Entity
+@Table(name = "Owners")
 public class Owner extends Person {
 
     private String address;
@@ -10,19 +16,26 @@ public class Owner extends Person {
     private String city;
 
     private String mobile;
-    private Set<Pet> pets = new HashSet<>();
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
+    private Set<Pet> pets = new HashSet<>();
 
     public String getAddress() {
         return address;
     }
 
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public Set<Pet> getPets() {
         return pets;
     }
+
+    public void setPets(Set<Pet> pets) {
+        this.pets = pets;
+    }
+
     public String getCity() {
         return city;
     }
@@ -37,10 +50,6 @@ public class Owner extends Person {
 
     public void setMobile(String mobile) {
         this.mobile = mobile;
-    }
-
-    public void setPets(Set<Pet> pets) {
-        this.pets = pets;
     }
 
 

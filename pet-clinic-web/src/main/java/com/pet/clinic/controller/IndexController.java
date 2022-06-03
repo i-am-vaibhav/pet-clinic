@@ -14,7 +14,7 @@ public class IndexController {
 
 
     @GetMapping("/oups")
-    public String oups(){
+    public String oups() {
         return "notImplemented";
     }
 

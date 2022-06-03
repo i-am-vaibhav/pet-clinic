@@ -27,10 +27,10 @@ public class DataLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        if(petTypeService.findAll().size()==0) {
+        if (petTypeService.findAll().size() == 0) {
             loadData();
             System.out.println("Loaded Startup Data");
-        }else{
+        } else {
             System.out.println("Data already loaded");
         }
     }
