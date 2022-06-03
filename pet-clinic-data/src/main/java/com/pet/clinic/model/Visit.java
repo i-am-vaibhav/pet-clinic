@@ -2,6 +2,7 @@ package com.pet.clinic.model;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import java.time.LocalDate;
 
@@ -12,7 +13,7 @@ public class Visit extends BaseEntity {
 
     private String description;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "pet_id")
     private Pet pet;
 
