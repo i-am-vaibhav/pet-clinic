@@ -3,12 +3,14 @@ package com.pet.clinic.services.jpa;
 import com.pet.clinic.model.Speciality;
 import com.pet.clinic.repository.SpecialityRepository;
 import com.pet.clinic.services.SpecialityService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
 
+@Slf4j
 @Service
 @Profile("jpa")
 public class SpecialityJpaService implements SpecialityService {

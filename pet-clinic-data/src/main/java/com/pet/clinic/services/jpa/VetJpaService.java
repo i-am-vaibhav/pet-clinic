@@ -3,6 +3,7 @@ package com.pet.clinic.services.jpa;
 import com.pet.clinic.model.Vet;
 import com.pet.clinic.repository.VetRepository;
 import com.pet.clinic.services.VetService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +11,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+@Slf4j
 @Service
 @Profile("jpa")
 public class VetJpaService implements VetService {

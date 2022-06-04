@@ -4,11 +4,15 @@ import com.pet.clinic.model.Speciality;
 import com.pet.clinic.model.Vet;
 import com.pet.clinic.services.SpecialityService;
 import com.pet.clinic.services.VetService;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Slf4j
 @Service
+@Profile({"map","default"})
 public class VetMapService extends AbstractMapService<Vet, Long> implements VetService {
 
     private final SpecialityService specialityService;
