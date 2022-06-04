@@ -17,7 +17,7 @@
                       class="glyphicon glyphicon-ok form-control-feedback"
                       th:if="${valid}"></span>
                 <th:block th:if="${!valid}">
-            <span
+                <span
                     aria-hidden="true"
                     class="glyphicon glyphicon-remove form-control-feedback"></span>
                     <span class="help-inline" th:errors="*{__${name}__}">Error</span>
