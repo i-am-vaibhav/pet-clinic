@@ -9,6 +9,7 @@ import javax.persistence.OneToOne;
 import java.time.LocalDate;
 
 @Data
+@EqualsAndHashCode(exclude = "pet")
 @Entity
 public class Visit extends BaseEntity {
 

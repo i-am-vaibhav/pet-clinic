@@ -7,6 +7,7 @@ import java.time.LocalDate;
 import java.util.Set;
 
 @Data
+@EqualsAndHashCode(exclude = {"owner"})
 @Entity
 public class Pet extends BaseEntity {
 
