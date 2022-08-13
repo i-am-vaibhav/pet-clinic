@@ -1,6 +1,10 @@
 package com.pet.clinic.services.map;
 
 import com.pet.clinic.model.Owner;
+import com.pet.clinic.services.map.AbstractMapService;
+import com.pet.clinic.services.map.OwnerMapService;
+import com.pet.clinic.services.map.PetMapService;
+import com.pet.clinic.services.map.PetTypeMapService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -54,6 +58,12 @@ class OwnerMapServiceTest extends AbstractMapService {
         Owner lastName = ownerService.findByLastName("lastName");
         assertNotNull(lastName);
         assertEquals(lastName.getLastName(),"lastName");
+    }
+
+    @Test
+    void findByLastNameNotFound() {
+        Owner lastName = ownerService.findByLastName("foo");
+        assertNull(lastName);
     }
 
     @Test
