@@ -38,7 +38,7 @@ class OwnerControllerTest extends AbstractMapService {
 
     @BeforeEach
     void setUp() {
-        //owners = new HashSet<>();
+        owners = new HashSet<>();
         Owner owner = new Owner();
         owner.setId(1l);
         Owner owner2 = new Owner();
