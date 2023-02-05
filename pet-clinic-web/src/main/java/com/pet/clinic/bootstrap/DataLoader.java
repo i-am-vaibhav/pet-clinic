@@ -60,7 +60,7 @@ public class DataLoader implements CommandLineRunner {
 
         Owner owner1 = new Owner();
         owner1.setFirstName("Vaibhav");
-        owner1.setLastName("Gupta");
+        owner1.setLastName("GuptaJii");
         owner1.setAddress("Bada Bazar");
         owner1.setCity("Chrm");
         owner1.setMobile("9876543456");

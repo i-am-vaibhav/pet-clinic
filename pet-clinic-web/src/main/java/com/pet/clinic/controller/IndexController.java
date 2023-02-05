@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class IndexController {
 
-    @GetMapping({"", "/", "index.html", "index"})
+    @GetMapping({"", "/", "owners.html", "index"})
     public String index(Model model) {
         log.debug("index page");
         return "index";
