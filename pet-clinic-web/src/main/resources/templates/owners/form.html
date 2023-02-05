@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{fragments/layout :: layout (~{::body},'owners')}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Owner</title>
+</head>
+<body>
+<div class="row">
+    <h1>Owner</h1>
+    <div class="col-12">
+        <form class="form-horizontal" th:with="action=${owner.id==null?'/owners/create':'/owners/'+owner.id+'/update'}" th:action="@{${action}}" method="post" th:object="${owner}">
+            <div class="form-group has-feedback">
+                <input th:replace="~{fragments/inputField ::input ('First Name','firstName','text')}"></input>
+
+                <input th:replace="~{fragments/inputField ::input ('Last Name','lastName','text')}"></input>
+
+                <input th:replace="~{fragments/inputField ::input ('Address','address','text')}"></input>
+
+                <input th:replace="~{fragments/inputField ::input ('Mobile','mobile','text')}"></input>
+
+                <input th:replace="~{fragments/inputField ::input ('City','city','text')}"></input>
+
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-8">
+                    <button th:with="text=${owner.id==null?'Add Owner':'Update Owner'}" type="submit" class="btn btn-default" th:text="${text}">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
