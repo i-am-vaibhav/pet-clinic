@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{fragments/layout :: layout (~{::body},'owners')}" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Pet</title>
+</head>
+<body>
+<div class="row">
+  <h1 th:with="text=${pet.id==null?'New Pet':'Update Pet'}" th:text="${text}"></h1>
+  <div class="col-12">
+    <form class="form-horizontal" th:with="action=${pet.id==null?'/owners/'+owner.id+'/pets/create':'/owners/'+owner.id+'/pets/'+pet.id+'/update'}" th:action="@{${action}}" method="post" th:object="${pet}">
+      <div class="form-group has-feedback">
+        <div class="form-group">
+          <label class="control-label col-sm-2">Owner</label>
+          <div class="col-sm-10"><span th:text="${owner.firstName +' ' +owner.lastName}"></span></div>
+        </div>
+        <input th:replace="~{fragments/inputField ::input ('Name','name','text')}"></input>
+
+        <input th:replace="~{fragments/inputField ::input ('Birth Date','birthDate','date')}"></input>
+
+        <select th:replace="~{fragments/selectField ::select ('Type','type.name',${types})}"></select>
+
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-8">
+          <button th:with="text=${pet.id==null?'Add Pet':'Update Pet'}" type="submit" class="btn btn-default" th:text="${text}">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+</html>

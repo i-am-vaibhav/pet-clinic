@@ -25,7 +25,7 @@
         </tbody>
     </table>
     <a class="btn btn-default" th:href="@{'/owners/'+${owner.id}+'/update'}">Edit Owner</a>
-    <a class="btn btn-default">Add New Pet</a>
+    <a class="btn btn-default" th:href="@{'/owners/'+${owner.id}+'/pets/create'}">Add New Pet</a>
     <br>
     <br>
     <h1>Pets and Visits</h1>
@@ -39,7 +39,7 @@
                     Birth Date : <span th:text="${pet.birthDate}"></span>
                 </div>
                 <div>
-                    Type : <span th:text="${pet.type.name}"></span>
+                    Type : <span th:text="${pet.type}"></span>
                 </div>
             </th>
             <th>
@@ -54,7 +54,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <a class="btn btn-default">Edit Pet</a>
+                            <a class="btn btn-default" th:href="@{'/owners/'+${owner.id}+'/pets/'+${pet.id}+'/create'}">Edit Pet</a>
                             <a class="btn btn-default">Add Visit</a>
                         </td>
                     </tr>

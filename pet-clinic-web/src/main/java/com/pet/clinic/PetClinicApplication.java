@@ -12,9 +12,4 @@ public class PetClinicApplication {
         SpringApplication.run(PetClinicApplication.class, args);
     }
 
-    @InitBinder
-    public void webDataBinder(WebDataBinder webDataBinder){
-        webDataBinder.setDisallowedFields("id");
-    }
-
 }
