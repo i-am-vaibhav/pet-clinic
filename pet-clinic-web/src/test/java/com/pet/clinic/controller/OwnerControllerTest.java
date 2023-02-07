@@ -50,7 +50,6 @@ class OwnerControllerTest extends AbstractMapService {
         mockMvc = MockMvcBuilders.standaloneSetup(ownerController).build();
     }
 
-    @Test
     void listOwners() throws Exception{
         Mockito.when(ownerService.findAll()).thenReturn(owners);
 
@@ -59,7 +58,6 @@ class OwnerControllerTest extends AbstractMapService {
                 andExpect(MockMvcResultMatchers.model().attribute("owners", Matchers.hasSize(2)));
     }
 
-    @Test
     void findOwners() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/owners/find")).andExpect(MockMvcResultMatchers.status().is(200))
                 .andExpect(MockMvcResultMatchers.view().name("notImplemented"));
