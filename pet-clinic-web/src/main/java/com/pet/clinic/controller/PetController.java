@@ -52,8 +52,8 @@ public class PetController {
         return "pets/form";
     }
 
-    @GetMapping("/pets/{petId}/create")
-    public String createPetPage(@PathVariable Long ownerId, @PathVariable Long petId, Model model) {
+    @GetMapping("/pets/{petId}/update")
+    public String updatePetPage(@PathVariable Long ownerId, @PathVariable Long petId, Model model) {
         model.addAttribute("pet", petService.findById(petId));
         return "pets/form";
     }
@@ -84,13 +84,14 @@ public class PetController {
             result.rejectValue("name", "duplicate");
             return "pets/form";
         }
-        PetType type = getPetTypes().stream().filter(p -> p.getName().equals(pet.getType().getName())).findFirst().orElse(null);
-        if (type == null) {
+        // To do creating a formatter
+        //PetType type = getPetTypes().stream().filter(p -> p.getName().equals(pet.getType().getName())).findFirst().orElse(null);
+        if (pet.getType() == null) {
             model.addAttribute("pet", pet);
             result.rejectValue("type.name", "notFound");
             return "pets/form";
         }
-        pet.setType(type);
+        pet.setType(pet.getType());
         pet.setOwner(owner);
         petService.save(pet);
         return null;

@@ -9,7 +9,9 @@ import javax.persistence.Table;
 import java.util.HashSet;
 import java.util.Set;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 @Table(name = "Owners")
 public class Owner extends Person {
