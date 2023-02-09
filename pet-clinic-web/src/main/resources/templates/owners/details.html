@@ -45,7 +45,7 @@
             <th>
                 <table>
                     <tr>
-                        <th>Visit Date</th>
+                        <th width="100px">Visit Date</th>
                         <th>Description</th>
                     </tr>
                     <tr th:each="visit : ${pet.visits}">
@@ -53,9 +53,12 @@
                         <td th:text="${visit.description}"></td>
                     </tr>
                     <tr>
-                        <td colspan="2">
-                            <a class="btn btn-default" th:href="@{'/owners/'+${owner.id}+'/pets/'+${pet.id}+'/update'}">Edit Pet</a>
-                            <a class="btn btn-default">Add Visit</a>
+                        <td>
+                            <a class="btn" th:href="@{'/owners/'+${owner.id}+'/pets/'+${pet.id}+'/update'}">Edit Pet</a>
+                        </td>
+                        <td>
+                            <a class="btn" th:href="@{'/owners/'+${owner.id}+'/pets/'+${pet.id}+'/visits'}">Add
+                                Visit</a>
                         </td>
                     </tr>
                 </table>
