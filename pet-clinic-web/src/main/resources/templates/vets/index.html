@@ -2,23 +2,23 @@
 <html lang="en" th:replace="~{fragments/layout :: layout (~{::body},'vets')}" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Vets</title>
+    <title>Veterinarians</title>
 </head>
 <body>
 <h1>List of Vets</h1>
 <table class="table table-striped">
     <thead>
     <tr>
-        <th>Id</th>
-        <th>First Name</th>
-        <th>Last Name</th>
+        <th>Name</th>
+        <th>Specialities</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="vet : ${vets}">
-        <th th:text="${vet.id}">Id</th>
-        <th th:text="${vet.firstName}">First Name</th>
-        <th th:text="${vet.lastName}">Last Name</th>
+        <th th:text="${vet.firstName + ' ' + vet.lastName}"></th>
+        <th><ul style="list-style-type: none">
+            <li th:each="speciality : ${vet.specialities}" th:text="${speciality.description}"></li>
+        </ul></th>
     </tr>
     </tbody>
 </table>
