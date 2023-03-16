@@ -14,7 +14,7 @@ import java.util.Set;
 
 @Slf4j
 @Controller
-@RequestMapping
+@RequestMapping("/vets")
 public class VetController {
 
     private final VetService vetService;
